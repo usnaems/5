@@ -23,7 +23,8 @@ def recursive_factorial(n):
     if n < 5:
         return -2
     else:
-        return pow(-1,n) * recursive_factorial(n - 1) // custom_factorial(n-5)
+        result = -1 if n % 2 == 1 else 1
+        return result * recursive_factorial(n - 1) // custom_factorial(n-5)
 
 
 
@@ -35,7 +36,8 @@ def iterative_factorial(n):
     f_values = [10] * 5
 
     for i in range(2, n + 1):
-        f = pow(-1, i) * ((f_values[-1])  // custom_factorial(i - 5))
+        result = -1 if i % 2 == 1 else 1
+        f = result * ((f_values[-1])  // custom_factorial(i - 5))
         f_values.append(f)
 
     return f_values[-1]
